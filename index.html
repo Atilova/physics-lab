@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive physics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F7;--surface:#FFFFFF;--ink:#1B2A33;--muted:#5B6A74;--line:#D5DEE4;--accent:#1D9E75;--object:#D85A30;--image:#993556;--ray:#D4537E}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#10181D;--surface:#172229;--ink:#E4ECF0;--muted:#94A4AE;--line:#2B3B45;--image:#E07AA0}
+}
+:root[data-theme="dark"]{--bg:#10181D;--surface:#172229;--ink:#E4ECF0;--muted:#94A4AE;--line:#2B3B45;--image:#E07AA0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding:32px 20px 48px}
+h1{font-size:30px;line-height:1.15;margin:0 0 8px;font-weight:700;letter-spacing:-0.01em}
+.lede{margin:0 0 24px;color:var(--muted);max-width:68ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+a.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;color:inherit;text-decoration:none;transition:border-color .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--accent);outline:none}
+.card svg{display:block;width:100%;height:auto;border-radius:8px;margin-bottom:14px;background:var(--bg)}
+.tag{display:inline-block;font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 8px;margin-bottom:8px}
+.card h2{font-size:19px;margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card p.ru{margin-top:8px;font-size:14px}
+footer{margin-top:28px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Interactive physics</h1>
+  <p class="lede">Small, self-contained pages for exploring school physics by dragging things around. Every page works in English and Russian and needs nothing but a browser.</p>
+
+  <div class="cards">
+    <a class="card" href="optics-bench.html">
+      <svg viewBox="0 0 320 120" role="img" aria-label="Ray diagram preview">
+        <line x1="0" y1="60" x2="320" y2="60" stroke="var(--muted)" stroke-width="1"/>
+        <path d="M232 14 Q252 60 232 106" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+        <line x1="120" y1="60" x2="120" y2="30" stroke="var(--object)" stroke-width="4"/><path d="M114 38 L120 30 L126 38" fill="none" stroke="var(--object)" stroke-width="4" stroke-linecap="round"/>
+        <line x1="40" y1="60" x2="40" y2="100" stroke="var(--image)" stroke-width="4"/><path d="M34 92 L40 100 L46 92" fill="none" stroke="var(--image)" stroke-width="4" stroke-linecap="round"/>
+        <line x1="120" y1="30" x2="238" y2="30" stroke="var(--ray)" stroke-width="1.8"/><line x1="238" y1="30" x2="0" y2="110" stroke="var(--ray)" stroke-width="1.8"/>
+        <line x1="120" y1="30" x2="238" y2="100" stroke="var(--ray)" stroke-width="1.8"/><line x1="238" y1="100" x2="0" y2="100" stroke="var(--ray)" stroke-width="1.8"/>
+        <line x1="120" y1="30" x2="240" y2="60" stroke="var(--ray)" stroke-width="1.8"/><line x1="240" y1="60" x2="0" y2="120" stroke="var(--ray)" stroke-width="1.8"/>
+        <circle cx="200" cy="60" r="3" fill="var(--ink)"/><circle cx="160" cy="60" r="3" fill="var(--ink)"/>
+      </svg>
+      <span class="tag">Optics</span>
+      <h2>Optics bench: mirrors and lenses</h2>
+      <p>Concave, convex and plane mirrors; converging and diverging lenses. Drag the object, the image, F and C, add an obstacle, zoom and pan.</p>
+      <p class="ru">Построение изображений в зеркалах и линзах: перетаскивайте предмет, изображение, F и C.</p>
+    </a>
+  </div>
+
+  <footer>To add a page, drop an HTML file into the repository and link it here.</footer>
+</div>
+</body>
+</html>
